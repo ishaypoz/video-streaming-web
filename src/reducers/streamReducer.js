@@ -6,11 +6,11 @@ export default (state = {}, action) => {
 		case FETCH_STREAMS:
 			return { ...state, ..._.mapKeys(action.payload, 'id') };
 		case FETCH_STREAM:
-			return { ...state, [action.payload.id]: action.paylod };
+			return { ...state, [action.payload.id]: action.payload };
 		case CREATE_STREAM:
-			return { ...state, [action.payload.id]: action.paylod };
+			return { ...state, [action.payload.id]: action.payload };
 		case EDIT_STREAM:
-			return { ...state, [action.payload.id]: action.paylod };
+			return { ...state, [action.payload.id]: action.payload };
 		case DELETE_STREAM:
 			return _.omit(state, action.paylod); //create a new object with all properties in state and return it without the action.payload
 		default:
